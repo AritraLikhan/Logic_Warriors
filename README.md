@@ -64,7 +64,9 @@ Testbench file:
 Example with Icarus Verilog:
 
 ```bash
-iverilog -g2012 -o tb.out logic_warriors.srcs/sources_1/imports/game_v33.srcs/sources_1/new/*.v
+iverilog -g2012 -o tb.out \
+  $(find logic_warriors.srcs/sources_1/imports/game_v33.srcs/sources_1/new -name '*.v' ! -name 'tb_*') \
+  logic_warriors.srcs/sources_1/imports/game_v33.srcs/sources_1/new/tb_game_cu_fsm.v
 vvp tb.out
 ```
 
