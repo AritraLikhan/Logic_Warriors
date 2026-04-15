@@ -69,5 +69,3 @@ iverilog -g2012 -o tb.out \
   logic_warriors.srcs/sources_1/imports/game_v33.srcs/sources_1/new/tb_game_cu_fsm.v
 vvp tb.out
 ```
-
-> Note: Vivado/Icarus tools were not available in this execution environment, so commands above are provided for local use.
