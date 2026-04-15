@@ -10,7 +10,7 @@ Logic Warriors is an FPGA-based turn-based battle game implemented in Verilog fo
 - Outputs: 16 LEDs + 4-digit seven-segment display
 - Soft reset: `sw[15]`
 
-Each side starts with 9 HP. The player and CPU pick actions each round, gains/losses are applied, and the game ends when either side's HP reaches 0.
+Each side starts with 9 HP. The player and CPU each pick an action per round, gains/losses are applied, and the game ends when either side's HP reaches 0.
 
 ## Player Controls
 
