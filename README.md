@@ -10,7 +10,7 @@ Logic Warriors is an FPGA-based turn-based battle game implemented in Verilog fo
 - Outputs: 16 LEDs + 4-digit seven-segment display
 - Soft reset: `sw[15]`
 
-Each side starts with 9 HP. The player and CPU each pick an action per round, gains/losses are applied, and the game ends when either side's HP reaches 0.
+Each side starts with 9 HP. The player and CPU each pick an action per round, HP changes are applied, and the game ends when either side's HP reaches 0.
 
 ## Player Controls
 
@@ -64,8 +64,8 @@ Testbench file:
 Example with Icarus Verilog:
 
 ```bash
-iverilog -g2012 -o tb.out \
-  $(find logic_warriors.srcs/sources_1/imports/game_v33.srcs/sources_1/new -name '*.v' ! -name 'tb_*') \
+find logic_warriors.srcs/sources_1/imports/game_v33.srcs/sources_1/new -name '*.v' ! -name 'tb_*' -print0 | \
+  xargs -0 iverilog -g2012 -o tb.out \
   logic_warriors.srcs/sources_1/imports/game_v33.srcs/sources_1/new/tb_game_cu_fsm.v
 vvp tb.out
 ```
